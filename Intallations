@@ -1,0 +1,10 @@
+#To install eslint:
+    npm install eslint @react-native-community/eslint-config --save-dev
+#To install expo navigation:
+    expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+#To install react navigation:
+    npm install @react-navigation/native
+#To install navigation stack:
+    npm install @react-navigation/stack
+#To install Async Storage:
+    npm i @react-native-async-storage/async-storage
