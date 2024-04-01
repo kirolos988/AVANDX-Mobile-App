@@ -14,6 +14,11 @@ const Slide = ({ item }) => {
 };
 
 const styles = StyleSheet.create({
+  image: {
+    height: '75%',
+    width: '90%',
+    resizeMode: 'contain',
+  },
   title: {
     color: '#fff',
     fontSize: 22,
@@ -28,11 +33,6 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
     textAlign: 'center',
     lineHeight: 23,
-  },
-  image: {
-    height: '75%',
-    width: '90%',
-    resizeMode: 'contain',
   },
 });
 export default Slide;

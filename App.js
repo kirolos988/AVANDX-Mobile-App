@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import OnBoardingScreen from './screens/OnBoardingScreen';
-import HomeScreen from './screens/HomeScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import OnBoardingScreen from './screens/OnboardingScreen/OnBoardingScreen';
+import HomeScreen from './screens/HomeScreen';
+import Services from './screens/Sevices/Services';
+import ServiceDesription from './screens/Sevices/ServiceDesription';
+import Loading from './screens/Loading/Loading';
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -27,6 +30,7 @@ export default function App() {
     isAppFirstLaunched != null && (
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="loading" component={Loading} />
           {isAppFirstLaunched && (
             <Stack.Screen
               name="onBoardingScreen"
@@ -34,10 +38,13 @@ export default function App() {
             />
           )}
           <Stack.Screen name="homeScreen" component={HomeScreen} />
+          <Stack.Screen name="services" component={Services} />
+          <Stack.Screen
+            name="serviceDescription"
+            component={ServiceDesription}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     )
   );
 }
-
-const styles = StyleSheet.create({});

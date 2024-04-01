@@ -9,7 +9,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import Slide from '../components/Slide';
+import Slide from '../../components/onBoarding/Slide';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const { width, height } = Dimensions.get('screen');
@@ -17,7 +17,7 @@ const { width, height } = Dimensions.get('screen');
 const OnBoardingData = [
   {
     id: '1',
-    img: require('../assets/MediaProduction.png'),
+    img: require('../../assets/OnBoarding/MediaProduction.png'),
     title: 'Media Production',
     content:
       'Media production service introduced with a high quality techniques and equipments.',
@@ -25,7 +25,7 @@ const OnBoardingData = [
   },
   {
     id: '2',
-    img: require('../assets/SocialMediaMarketing.png'),
+    img: require('../../assets/OnBoarding/SocialMediaMarketing.png'),
     title: 'Social Media Marketing',
     content:
       'To help you to effectivly deliver your product to the most suitable client.',
@@ -33,7 +33,7 @@ const OnBoardingData = [
   },
   {
     id: '3',
-    img: require('../assets/GraphicDesign.png'),
+    img: require('../../assets/OnBoarding/GraphicDesign.png'),
     title: 'Graphic Design',
     content:
       'To make the most creative, simple and elegant design for your ad or your company logo.',
@@ -121,12 +121,15 @@ const OnBoardingScreen = ({ navigation }) => {
       end={{ x: 1, y: 1 }}
       style={{ flex: 1 }}
     >
-      <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         <StatusBar style={{ backgroundColor: '#6F0000' }} />
         <FlatList
           data={OnBoardingData}
           keyExtractor={(item) => item.id}
-          contentContainerStyle={{ height: height * 0.5 }}
+          contentContainerStyle={{
+            height: height * 0.5,
+            marginTop: height * 0.1,
+          }}
           showsHorizontalScrollIndicator={false}
           horizontal
           renderItem={({ item }) => <Slide item={item} />}
@@ -134,8 +137,8 @@ const OnBoardingScreen = ({ navigation }) => {
           ref={ref}
           pagingEnabled
         />
-        <Footer />
-      </SafeAreaView>
+      </View>
+      <Footer />
     </LinearGradient>
   );
 };
